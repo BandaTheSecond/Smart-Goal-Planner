@@ -1,0 +1,28 @@
+{
+  "goals": [
+    {
+      "id": "2afa",
+      "name": "Join Moringa",
+      "targetAmount": "200000",
+      "category": "Education",
+      "deadline": "2025-07-31",
+      "savedAmount": 60000
+    },
+    {
+      "id": "76dd",
+      "name": "Buy Mercedes c250",
+      "targetAmount": "4200000",
+      "category": "Transport",
+      "deadline": "2025-07-26",
+      "savedAmount": 0
+    },
+    {
+      "id": "903e",
+      "name": "Savings",
+      "targetAmount": "3000000",
+      "category": "Emergency kitty",
+      "deadline": "2026-01-23",
+      "savedAmount": 0
+    }
+  ]
+}
