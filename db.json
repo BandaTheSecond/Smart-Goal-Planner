@@ -6,7 +6,7 @@
       "targetAmount": "200000",
       "category": "Education",
       "deadline": "2025-07-31",
-      "savedAmount": 60000
+      "savedAmount": 200000
     },
     {
       "id": "76dd",
@@ -14,7 +14,7 @@
       "targetAmount": "4200000",
       "category": "Transport",
       "deadline": "2025-07-26",
-      "savedAmount": 0
+      "savedAmount": 4000000
     },
     {
       "id": "903e",
@@ -22,7 +22,23 @@
       "targetAmount": "3000000",
       "category": "Emergency kitty",
       "deadline": "2026-01-23",
-      "savedAmount": 0
+      "savedAmount": 100000
+    },
+    {
+      "id": "d9f3",
+      "name": "Open Hotel",
+      "targetAmount": "500000",
+      "category": "side hustle",
+      "deadline": "2025-10-15",
+      "savedAmount": 200000
+    },
+    {
+      "id": "f800",
+      "name": "Explore hotels",
+      "targetAmount": "50000",
+      "category": "Fun and foods",
+      "deadline": "2025-06-27",
+      "savedAmount": 80000
     }
   ]
 }

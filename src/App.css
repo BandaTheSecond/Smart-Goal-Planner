@@ -3,8 +3,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f7f9fc;
-  color: #333;
+  background-color: #beadc7;
+  color: black;
 }
 
 .App {
@@ -16,10 +16,9 @@ body {
 /* Header */
 h1 {
   text-align: center;
-  color: #4caf50;
+  color: black;
 }
 
-/* Goal Form */
 .goal-form {
   display: flex;
   flex-direction: column;
@@ -29,14 +28,14 @@ h1 {
 
 .goal-form input {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid black;
   border-radius: 6px;
 }
 
 .goal-form button {
   padding: 10px;
-  background-color: #4caf50;
-  color: white;
+  background-color: #127505;
+  color: black;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -44,27 +43,26 @@ h1 {
 }
 
 .goal-form button:hover {
-  background-color: #45a049;
+  background-color: #740303;
 }
 
-/* Overview */
 .overview {
-  background-color: #e3f2fd;
+  background-color: #8abee4;
   padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 30px;
+  border-radius: 10px ;
+  margin-bottom: 40px;
 }
 
-/* Goal Cards */
+/* For Goal Cards */
 .goal-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .goal-card {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
+  background-color: #8abee4;
+  border: 1px solid black;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.05);
@@ -93,12 +91,11 @@ h1 {
   transition: width 0.5s ease-in-out;
 }
 
-/* Deposit & Action Buttons */
+/* For Deposit & Action Buttons */
 .goal-card input[type='number'] {
-  width: 100%;
   margin-top: 10px;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid black;
   border-radius: 6px;
 }
 
@@ -106,7 +103,7 @@ h1 {
   margin-top: 10px;
   padding: 8px;
   margin-right: 10px;
-  background-color: #1976d2;
+  background-color: #0c5c27;
   color: white;
   border: none;
   border-radius: 6px;
@@ -114,11 +111,11 @@ h1 {
 }
 
 .goal-card button:hover {
-  background-color: #1565c0;
+  background-color: #15c01d;
 }
 
 .goal-card button:last-of-type {
-  background-color: #e53935;
+  background-color: #5e0706;
 }
 
 .goal-card button:last-of-type:hover {
