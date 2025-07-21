@@ -1,0 +1,26 @@
+#  Smart Goal Planner
+
+A React-based application that helps users plan, track, and manage their savings goals effectively. Users can set financial goals, track their progress with deposits, and get a visual overview of their savings journey.
+
+##  Features
+
+-  Add new savings goals (name, target amount, deadline)
+-  Make deposits toward each goal
+-  View progress as a percentage bar or chart
+-  Delete goals and deposits
+-  Backend powered by `json-server`
+
+---
+
+##  Project Structure
+smart-goal-planner/
+├── db.json #  (JSON Server)
+├── public/
+├── src/
+│ ├── components/ # GoalForm.js
+                  #GoalList.js
+                  #GoalOverview.js
+│ ├── App.js
+│ └── index.js
+├── package.json
+

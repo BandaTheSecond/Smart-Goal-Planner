@@ -33,12 +33,12 @@
       "savedAmount": 200000
     },
     {
-      "id": "f800",
-      "name": "Explore hotels",
-      "targetAmount": "50000",
-      "category": "Fun and foods",
-      "deadline": "2025-06-27",
-      "savedAmount": 80000
+      "id": "0abb",
+      "name": "Buy 2 Suites at Kilimani",
+      "targetAmount": "20000000",
+      "category": "Investment",
+      "deadline": "2025-05-29",
+      "savedAmount": 10000000
     }
   ]
 }
