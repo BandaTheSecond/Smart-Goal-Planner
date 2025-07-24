@@ -39,6 +39,14 @@
       "category": "Investment",
       "deadline": "2025-05-29",
       "savedAmount": 10000000
+    },
+    {
+      "id": "811b",
+      "name": "Tour Japan",
+      "targetAmount": "500000",
+      "category": "Fun and foods",
+      "deadline": "2025-07-31",
+      "savedAmount": 300000
     }
   ]
 }

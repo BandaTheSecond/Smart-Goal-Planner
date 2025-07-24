@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Deployed Project ([resonant-bavarois-2a5e8c.netlify.app](https://resonant-bavarois-2a5e8c.netlify.app/))
+
 ## Available Scripts
 
 In the project directory, you can run:
