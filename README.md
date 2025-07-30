@@ -2,7 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Deployed Project : https://smart-goal-planner-git-main-bandatheseconds-projects.vercel.app
+## Deployment Link
+
+[Smart Goal Planner](https://smart-goal-planner-plum.vercel.app/)
 
 ## Available Scripts
 
