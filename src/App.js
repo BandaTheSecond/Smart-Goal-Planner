@@ -4,7 +4,7 @@ import GoalOverview from './components/GoalOverview';
 import GoalList from './components/GoalList';
 import './App.css';
 
-const API_URL = 'http://localhost:3000/goals';
+const API_URL = 'http://localhost:3001/goals';
 
 function App() {
   const [goals, setGoals] = useState([]);
