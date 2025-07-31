@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Deployment Link
 
-[Smart Goal Planner](https://smart-goal-planner-plum.vercel.app/)
+[Smart Goal Planner](https://smart-goal-planner-uumu.vercel.app/)
 [ Backend API](https://goals-api-y5pv.onrender.com)
 
 ## Available Scripts

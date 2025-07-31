@@ -4,11 +4,14 @@ import GoalOverview from './components/GoalOverview';
 import GoalList from './components/GoalList';
 import './App.css';
 
-const API_URL = 'http://localhost:3001/goals';
+const API_URL = 'https://goals-api-y5pv.onrender.com/goals';
+
 
 function App() {
   const [goals, setGoals] = useState([]);
   const [deposit, setDeposit] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     fetchGoals();
@@ -16,54 +19,89 @@ function App() {
 
   const fetchGoals = async () => {
     try {
+      setLoading(true);
+      setError('');
       const res = await fetch(API_URL);
+      if (!res.ok) throw new Error('Failed to fetch goals');
       const data = await res.json();
-      console.log("Fetched goals:", data);
       setGoals(Array.isArray(data) ? data : []);
     } catch (err) {
-      console.error("Failed to fetch goals:", err);
+      console.error("Fetch error:", err);
+      setError('Unable to fetch goals. Please try again later.');
       setGoals([]);
+    } finally {
+      setLoading(false);
     }
   };
 
   const addGoal = async (goal) => {
-    await fetch(API_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...goal, savedAmount: 0 })
-    });
-    fetchGoals();
+    try {
+      setError('');
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...goal, savedAmount: 0 })
+      });
+      if (!res.ok) throw new Error('Failed to add goal');
+      fetchGoals();
+    } catch (err) {
+      console.error("Add goal error:", err);
+      setError('Unable to add goal. Please try again.');
+    }
   };
 
   const deleteGoal = async (id) => {
-    await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
-    fetchGoals();
+    try {
+      setError('');
+      const res = await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+      if (!res.ok) throw new Error('Failed to delete goal');
+      fetchGoals();
+    } catch (err) {
+      console.error("Delete goal error:", err);
+      setError('Unable to delete goal. Please try again.');
+    }
   };
 
   const depositToGoal = async (id, amount) => {
     const goal = goals.find(g => g.id === id);
     if (!goal) return;
-    await fetch(`${API_URL}/${id}`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ savedAmount: goal.savedAmount + amount })
-    });
-    setDeposit(prev => ({ ...prev, [id]: '' }));
-    fetchGoals();
+    try {
+      setError('');
+      const res = await fetch(`${API_URL}/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ savedAmount: goal.savedAmount + amount })
+      });
+      if (!res.ok) throw new Error('Failed to deposit to goal');
+      setDeposit(prev => ({ ...prev, [id]: '' }));
+      fetchGoals();
+    } catch (err) {
+      console.error("Deposit error:", err);
+      setError('Unable to update savings. Please try again.');
+    }
   };
 
   return (
     <div className="App">
       <h1>SMART GOAL PLANNER</h1>
+
+      {loading && <p>Loading goals...</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+
       <GoalForm onSubmit={addGoal} />
-      {Array.isArray(goals) && goals.length > 0 && <GoalOverview goals={goals} />}
-      <GoalList
-        goals={goals}
-        deposit={deposit}
-        setDeposit={setDeposit}
-        onDeposit={depositToGoal}
-        onDelete={deleteGoal}
-      />
+
+      {Array.isArray(goals) && goals.length > 0 && !loading && (
+        <>
+          <GoalOverview goals={goals} />
+          <GoalList
+            goals={goals}
+            deposit={deposit}
+            setDeposit={setDeposit}
+            onDeposit={depositToGoal}
+            onDelete={deleteGoal}
+          />
+        </>
+      )}
     </div>
   );
 }
